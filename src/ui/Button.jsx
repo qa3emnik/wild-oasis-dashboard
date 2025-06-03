@@ -52,9 +52,16 @@ const Button = styled.button`
   border: none;
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
-  /* ${(props) => sizes[props.size]} */
-  /* ${(props) => variations[props.variation]} */
+  cursor: pointer;
+
   ${({ $size }) => sizes[$size]}
   ${({ $variation }) => variations[$variation]}
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
 `;
+
 export default Button;
